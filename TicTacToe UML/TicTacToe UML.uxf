@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>60</x>
+      <y>500</y>
+      <w>320</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>Board
+--
+- FieldStates: int[9]
+- XTurn: Boolean
+- InputController: InputConroller
+- EndStateChecker: EndStateChecker
+- Renderer: Renderer
+--
+- SetFieldState(int position, Enum State): void
+- SetTurn(boolean turn): void
+- RestartBoard: void
+--
+Responsibilities
+Stores Boardstate
+Communicates with Renderer and InputController
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>340</x>
+      <y>240</y>
+      <w>280</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>InputController
+--
+Input: String
+InputState: int
+InputChecker: InputChecker
+--
+getInput(): void
+
+--
+Responsibilities
+Responsible for getting Input.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>200</x>
+      <y>420</y>
+      <w>260</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>240.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>320</y>
+      <w>240</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>Renderer
+-
+--
+RenderView(): void
+SendEndMessage(int): void
+--
+Responsibilities
+Responsible for displaying view</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>130</x>
+      <y>440</y>
+      <w>100</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>430</x>
+      <y>530</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>EndStateChecker
+--
+--
+CheckForEndState(): int
+--
+Responsibilities
+Checks for Endstate:
+0 - ContinueGame
+1 - OWin
+2 - XWin
+3 - Tie</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>350</x>
+      <y>0</y>
+      <w>280</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>InputChecker
+--
+Input: String
+--
+CheckInput(): int
+sendErrorMessage(): void
+--
+Responsibilities
+Responsible for parsing Input for 
+Errors and invalid Inputs.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>470</x>
+      <y>180</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>370</x>
+      <y>620</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
