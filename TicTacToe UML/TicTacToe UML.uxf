@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>10</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>60</x>
-      <y>500</y>
-      <w>320</w>
-      <h>240</h>
+      <x>408</x>
+      <y>32</y>
+      <w>256</w>
+      <h>192</h>
     </coordinates>
     <panel_attributes>Board
 --
 - FieldStates: int[9]
-- XTurn: Boolean
-- InputController: InputConroller
-- EndStateChecker: EndStateChecker
-- Renderer: Renderer
+- PlayerTurn: Int
 --
-- SetFieldState(int position, Enum State): void
-- SetTurn(boolean turn): void
-- RestartBoard: void
++ Board()
++ SetFieldState(int position, Enum State): void
++ GetFieldStates: int[9]
++ SetPlayerTurn(int turn): void
++ GetPlayerTurn(): int
++ ResetBoard: void
 --
 Responsibilities
 Stores Boardstate
@@ -30,76 +30,52 @@ Communicates with Renderer and InputController
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>340</x>
-      <y>240</y>
-      <w>280</w>
-      <h>190</h>
+      <x>696</x>
+      <y>120</y>
+      <w>248</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>InputController
 --
-Input: String
-InputState: int
-InputChecker: InputChecker
 --
-getInput(): void
-
++ InputController()
++ GetInput(): String
+- CheckInput(): int
 --
 Responsibilities
-Responsible for getting Input.</panel_attributes>
+Responsible for getting and parsing Input.</panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>200</x>
-      <y>420</y>
-      <w>260</w>
-      <h>100</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>240.0;10.0;10.0;80.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>30</x>
-      <y>320</y>
-      <w>240</w>
-      <h>130</h>
+      <x>184</x>
+      <y>216</y>
+      <w>208</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>Renderer
 -
 --
-RenderView(): void
-SendEndMessage(int): void
++ Renderer()
++ RenderView(int[9] FieldStates): void
 --
 Responsibilities
 Responsible for displaying view</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>130</x>
-      <y>440</y>
-      <w>100</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;80.0;60.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>430</x>
-      <y>530</y>
-      <w>210</w>
-      <h>190</h>
+      <x>696</x>
+      <y>304</y>
+      <w>216</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>EndStateChecker
 --
 --
-CheckForEndState(): int
++ EndStateChecker()
 --
 Responsibilities
 Checks for Endstate:
@@ -112,43 +88,162 @@ Checks for Endstate:
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>350</x>
-      <y>0</y>
-      <w>280</w>
-      <h>190</h>
+      <x>96</x>
+      <y>328</y>
+      <w>224</w>
+      <h>88</h>
     </coordinates>
-    <panel_attributes>InputChecker
+    <panel_attributes>ValidMoveChecker
 --
-Input: String
 --
-CheckInput(): int
-sendErrorMessage(): void
++ ValidMoveChecker()
++ CheckValidMove(int[9], int): boolean
 --
 Responsibilities
-Responsible for parsing Input for 
-Errors and invalid Inputs.</panel_attributes>
+Responsible for keeping moves valid</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>470</x>
-      <y>180</y>
-      <w>30</w>
-      <h>80</h>
+      <x>656</x>
+      <y>200</y>
+      <w>56</w>
+      <h>152</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;170.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>370</x>
-      <y>620</y>
-      <w>80</w>
-      <h>30</h>
+      <x>312</x>
+      <y>336</y>
+      <w>112</w>
+      <h>88</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;90.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>656</x>
+      <y>328</y>
+      <w>56</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>50.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>416</x>
+      <y>456</y>
+      <w>224</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Main
+--
+- TicTacToe: TicTacToe
+--
++ main(String[] args)
+--
+Responsibilities
+Responsible for Starting the Game</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>408</x>
+      <y>248</y>
+      <w>256</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>TicTacToe
+--
+- InputController: InputConroller
+- EndStateChecker: EndStateChecker
+- Renderer: Renderer
+- LanguageController: LanguageController
+--
++ TicTacToe()
+- GetMove(): int
+- SendMessage(): void
++ RestartGame: void
+--
+Responsibilities
+Controls All Game Features
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>528</x>
+      <y>216</y>
+      <w>24</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>416</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>328</x>
+      <y>296</y>
+      <w>96</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>448</y>
+      <w>224</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>LanguageController
+--
+- Language Setting
+- EnglishMessages: String[]
+- GermanMessages: String[]
+-
++ LanguageController()
++ SetLanguageSetting
++ GetMessage(int Language, int MessageIndex)
+--
+Responsibilities
+Responsible For Storing Language Setting
+And Messages</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>336</x>
+      <y>336</y>
+      <w>88</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;140.0;90.0;10.0</additional_attributes>
   </element>
 </diagram>
