@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>12</zoom_level>
+  <zoom_level>11</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>564</x>
-      <y>24</y>
-      <w>384</w>
-      <h>240</h>
+      <x>495</x>
+      <y>77</y>
+      <w>352</w>
+      <h>242</h>
     </coordinates>
     <panel_attributes>Board
 --
+- ValidMoveChecker: ValidMoveChecker
+- EndStateChecker: EndStateChecker
 - FieldStates: int[9]
-- PlayerTurn: Int
++ PlayerTurn: Int
++ BoardState: Int
 --
 + Board()
-+ SetFieldState(int position, int State): void
-+ GetFieldStates: int[9]
-+ SetPlayerTurn(int turn): void
-+ GetPlayerTurn(): int
-+ ResetBoard: void
++ SetFieldState(int position, int State): boolean
++ RenderBoard(): void
++ ResetBoard(): void
 --
 Responsibilities
 Stores Boardstate
@@ -29,10 +30,10 @@ Stores Boardstate
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>996</x>
-      <y>108</y>
-      <w>372</w>
-      <h>156</h>
+      <x>891</x>
+      <y>341</y>
+      <w>341</w>
+      <h>143</h>
     </coordinates>
     <panel_attributes>InputController
 --
@@ -48,33 +49,16 @@ Responsible for getting and parsing Input.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>228</x>
-      <y>252</y>
-      <w>312</w>
-      <h>132</h>
-    </coordinates>
-    <panel_attributes>Renderer
--
---
-+ Renderer()
-+ RenderView(int[9] FieldStates): void
---
-Responsibilities
-Responsible for displaying view</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>996</x>
-      <y>384</y>
-      <w>324</w>
-      <h>192</h>
+      <x>891</x>
+      <y>132</y>
+      <w>297</w>
+      <h>187</h>
     </coordinates>
     <panel_attributes>EndStateChecker
 --
 --
-+ EndStateChecker(int[9] FieldState)
++ EndStateChecker()
++ CheckForEndState(int[9] FieldState): int
 --
 Responsibilities
 Checks for Endstate:
@@ -87,10 +71,10 @@ Checks for Endstate:
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>420</y>
-      <w>432</w>
-      <h>132</h>
+      <x>55</x>
+      <y>187</y>
+      <w>396</w>
+      <h>121</h>
     </coordinates>
     <panel_attributes>ValidMoveChecker
 --
@@ -105,43 +89,43 @@ Responsible for keeping moves valid</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
-      <y>228</y>
-      <w>84</w>
-      <h>228</h>
+      <x>836</x>
+      <y>418</y>
+      <w>77</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>50.0;10.0;10.0;170.0</additional_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>420</x>
-      <y>432</y>
-      <w>168</w>
-      <h>132</h>
+      <x>440</x>
+      <y>253</y>
+      <w>77</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;90.0;120.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
-      <y>420</y>
-      <w>84</w>
-      <h>120</h>
+      <x>836</x>
+      <y>220</y>
+      <w>77</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>50.0;80.0;10.0;10.0</additional_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>576</x>
-      <y>612</y>
-      <w>336</w>
-      <h>132</h>
+      <x>506</x>
+      <y>583</y>
+      <w>308</w>
+      <h>121</h>
     </coordinates>
     <panel_attributes>Main
 --
@@ -156,16 +140,15 @@ Responsible for Starting the Game</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>564</x>
-      <y>300</y>
-      <w>384</w>
-      <h>264</h>
+      <x>495</x>
+      <y>341</y>
+      <w>352</w>
+      <h>209</h>
     </coordinates>
     <panel_attributes>TicTacToe
 --
-- InputController: InputConroller
-- EndStateChecker: EndStateChecker
-- Renderer: Renderer
+- Board: Board
+- InputController: InputController
 - LanguageController: LanguageController
 --
 + TicTacToe()
@@ -181,43 +164,32 @@ Controls All Game Features
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>744</x>
-      <y>252</y>
-      <w>36</w>
-      <h>72</h>
+      <x>660</x>
+      <y>308</y>
+      <w>33</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>649</x>
+      <y>539</y>
+      <w>33</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>732</x>
-      <y>552</y>
-      <w>36</w>
-      <h>84</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>444</x>
-      <y>372</y>
-      <w>144</w>
-      <h>96</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;100.0;60.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>132</x>
-      <y>600</y>
-      <w>372</w>
-      <h>228</h>
+      <x>110</x>
+      <y>341</y>
+      <w>341</w>
+      <h>209</h>
     </coordinates>
     <panel_attributes>LanguageController
 --
@@ -237,12 +209,12 @@ And Messages</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>456</x>
-      <y>432</y>
-      <w>132</w>
-      <h>192</h>
+      <x>440</x>
+      <y>429</y>
+      <w>77</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;140.0;90.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
   </element>
 </diagram>
