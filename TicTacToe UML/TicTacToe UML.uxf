@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>7</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>336</x>
-      <y>140</y>
-      <w>224</w>
-      <h>140</h>
+      <x>408</x>
+      <y>72</y>
+      <w>256</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>Board
 --
@@ -29,10 +29,10 @@ Stores Boardstate
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>588</x>
-      <y>189</y>
-      <w>217</w>
-      <h>91</h>
+      <x>696</x>
+      <y>128</y>
+      <w>248</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>InputController
 --
@@ -48,10 +48,10 @@ Responsible for getting and parsing Input.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>140</x>
-      <y>273</y>
-      <w>182</w>
-      <h>77</h>
+      <x>184</x>
+      <y>224</y>
+      <w>208</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>Renderer
 -
@@ -66,10 +66,10 @@ Responsible for displaying view</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>588</x>
-      <y>350</y>
-      <w>189</w>
-      <h>112</h>
+      <x>696</x>
+      <y>312</y>
+      <w>216</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>EndStateChecker
 --
@@ -87,16 +87,16 @@ Checks for Endstate:
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>63</x>
-      <y>371</y>
-      <w>196</w>
-      <h>77</h>
+      <x>32</x>
+      <y>336</y>
+      <w>288</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>ValidMoveChecker
 --
 --
 + ValidMoveChecker()
-+ CheckValidMove(int[9], int): boolean
++ CheckValidMove(int[9] FieldStates, int Field): boolean
 --
 Responsibilities
 Responsible for keeping moves valid</panel_attributes>
@@ -105,10 +105,10 @@ Responsible for keeping moves valid</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>553</x>
-      <y>259</y>
-      <w>49</w>
-      <h>133</h>
+      <x>656</x>
+      <y>208</y>
+      <w>56</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>50.0;10.0;10.0;170.0</additional_attributes>
@@ -116,10 +116,10 @@ Responsible for keeping moves valid</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>252</x>
-      <y>378</y>
-      <w>98</w>
-      <h>77</h>
+      <x>312</x>
+      <y>344</y>
+      <w>112</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;90.0;120.0;10.0</additional_attributes>
@@ -127,10 +127,10 @@ Responsible for keeping moves valid</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>553</x>
-      <y>371</y>
-      <w>49</w>
-      <h>70</h>
+      <x>656</x>
+      <y>336</y>
+      <w>56</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>50.0;80.0;10.0;10.0</additional_attributes>
@@ -138,10 +138,10 @@ Responsible for keeping moves valid</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>343</x>
-      <y>483</y>
-      <w>196</w>
-      <h>77</h>
+      <x>416</x>
+      <y>464</y>
+      <w>224</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>Main
 --
@@ -156,10 +156,10 @@ Responsible for Starting the Game</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>336</x>
-      <y>301</y>
-      <w>224</w>
-      <h>154</h>
+      <x>408</x>
+      <y>256</y>
+      <w>256</w>
+      <h>176</h>
     </coordinates>
     <panel_attributes>TicTacToe
 --
@@ -181,10 +181,10 @@ Controls All Game Features
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>441</x>
-      <y>273</y>
-      <w>21</w>
-      <h>42</h>
+      <x>528</x>
+      <y>224</y>
+      <w>24</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
@@ -192,10 +192,10 @@ Controls All Game Features
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>434</x>
-      <y>448</y>
-      <w>21</w>
-      <h>49</h>
+      <x>520</x>
+      <y>424</y>
+      <w>24</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
@@ -203,10 +203,10 @@ Controls All Game Features
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>266</x>
-      <y>343</y>
-      <w>84</w>
-      <h>56</h>
+      <x>328</x>
+      <y>304</y>
+      <w>96</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;100.0;60.0</additional_attributes>
@@ -214,10 +214,10 @@ Controls All Game Features
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>84</x>
-      <y>476</y>
-      <w>217</w>
-      <h>133</h>
+      <x>120</x>
+      <y>456</y>
+      <w>248</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>LanguageController
 --
@@ -237,10 +237,10 @@ And Messages</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>273</x>
-      <y>378</y>
-      <w>77</w>
-      <h>112</h>
+      <x>336</x>
+      <y>344</y>
+      <w>88</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;140.0;90.0;10.0</additional_attributes>
