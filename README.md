@@ -1,3 +1,8 @@
+ReadMe Inhalt: Beschreibung wie unser TicTacToe funktioniert
+
+
+> Die Klassenbeschreibung muss in ein separates PDF file und kann über das READme geöffnet werden
+
 # Klassenbeschreibungen
 
 ## class Main
