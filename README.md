@@ -8,7 +8,7 @@ TL:DR wie unser TicTacToe und seine Klassen funktionieren:
 6. & **EndstateChecker**
 7. Nachrichten an die Spieler mit **LanguageController**
 
-👉 Hier die detaillierte Version: [Klassenbeschreibung](./Team1_Alphas_Klassenbeschreibung_TicTacToe.pdf)
+👉 Hier die detaillierte Version: [Klassenbeschreibung](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/Team1_Alphas_Klassenbeschreibung_TicTacToe_V1.pdf)
 
 - [Ablaufdiagramm](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/TicTacToe%20UML/AblaufDragramm%20TicTacToe.png)
 - [TicTacToe UML (UXF)](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/TicTacToe%20UML/TicTacToe%20UML.uxf)
