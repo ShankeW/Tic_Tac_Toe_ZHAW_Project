@@ -1,4 +1,4 @@
-ReadMe Inhalt: Beschreibung wie unser TicTacToe funktioniert
+TL:DR wie unser TicTacToe und seine Klassen funktionieren:
 
 1. **Main** startet alles
 2. **TicTacToe** steuert alles
@@ -9,3 +9,7 @@ ReadMe Inhalt: Beschreibung wie unser TicTacToe funktioniert
 7. Nachrichten an die Spieler mit **LanguageController**
 
 👉 Hier die detaillierte Version: [Klassenbeschreibung](./Team1_Alphas_Klassenbeschreibung_TicTacToe.pdf)
+
+- [Ablaufdiagramm](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/TicTacToe%20UML/AblaufDragramm%20TicTacToe.png)
+- [TicTacToe UML (UXF)](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/TicTacToe%20UML/TicTacToe%20UML.uxf)
+- [TicTacToe UML V8 (PDF)](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/TicTacToe%20UML/TicTacToe%20UMLV8.pdf)
