@@ -1,36 +1,4 @@
-# Klassenbeschreibungen
-
-## class Main
-Rolle: Startet das Spiel.  
-Die Klasse initialisiert **TicTacToe**.
-
-## class TicTacToe
-Kontrolliert alle Spielfunktionen.  
-Es instanziiert den **InputController**, den **EndstateChecker**, den **Renderer** und den **LanguageController**.
-Alle Messages werden auch durch diese Klasse in der Console printed.
-
-
-## class Board
-Speichert den Spielfeldstatus und kann diesen zurücksetzten.
-Nachdem ein korrekter Spielzug getätigt wurde, updated die Klasse das Spielfed mit **SetFieldStates** und kann das Spielfeld abrufen mit **GetFieldStates**.
-Die Klasse speichert auch, welcher Spieler gerade an der Reihe ist und kann diesen Status auch abrufen.
-
-## class LanguageController
-
-
-## class Renderer
-
-
-## class InputController
-
-
-## class ValidMoveChecker
-
-
-## class EndStateChecker
-
-
-### TL:DR
+TL:DR wie unser TicTacToe und seine Klassen funktionieren:
 
 1. **Main** startet alles
 2. **TicTacToe** steuert alles
@@ -38,5 +6,11 @@ Die Klasse speichert auch, welcher Spieler gerade an der Reihe ist und kann dies
 4. Eingaben über **InputController**
 5. Überprüfung mit **ValidMoveChecker**
 6. & **EndstateChecker**
-7. Darstellung mit **Renderer**
-8. Nachrichten an die Spieler mit **LanguageController**
+7. Nachrichten an die Spieler mit **LanguageController**
+
+👉 Hier die detaillierte Version: [Klassenbeschreibung](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/Team1_Alphas_Klassenbeschreibung_TicTacToe_V1.pdf)
+
+- [Ablaufdiagramm](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/TicTacToe%20UML/AblaufDragramm%20TicTacToe.png)
+- [TicTacToe UML (UXF)](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/TicTacToe%20UML/TicTacToe%20UML.uxf)
+- [TicTacToe UML V8 (PDF)](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/TicTacToe%20UML/TicTacToe%20UMLV8.pdf)
+- [Prosa TicTacToe](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/Prosa_TicTacToe.pdf) 
