@@ -10,7 +10,8 @@ TL:DR wie unser TicTacToe und seine Klassen funktionieren:
 
 👉 Hier die detaillierte Version: [Klassenbeschreibung](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/Team1_Alphas_Klassenbeschreibung_TicTacToe_V1.pdf)
 
-- [Ablaufdiagramm](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/TicTacToe%20UML/AblaufDragramm%20TicTacToe.png)
+- [Ablaufdiagramm (PDF)](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/TicTacToe%20UML/AblaufDragramm%20TicTacToe.png)
+- [Testkonzept (PDF)](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/Team1_Alphas_Testkonzept.pdf)
 - [TicTacToe UML (UXF)](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/TicTacToe%20UML/TicTacToe%20UML.uxf)
 - [TicTacToe UML V8 (PDF)](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/TicTacToe%20UML/TicTacToe%20UMLV8.pdf)
-- [Prosa TicTacToe](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/Prosa_TicTacToe.pdf) 
+- [Prosa TicTacToe (PDF)](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/Prosa_TicTacToe.pdf) 
