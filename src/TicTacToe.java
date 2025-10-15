@@ -10,7 +10,7 @@ public class TicTacToe {
     }
 
     private void playTurn(){
-        while(board.BoardState == 0) {
+        while(board.EndState == 0) {
 
         sendMessage("Language / Sprache");
         sendMessage("1 - English");
@@ -42,7 +42,7 @@ public class TicTacToe {
             }
         }
 
-        switch (board.BoardState) {
+        switch (board.EndState) {
             case 1:
                 sendMessage(languageController.getMessage(0));
                 break;

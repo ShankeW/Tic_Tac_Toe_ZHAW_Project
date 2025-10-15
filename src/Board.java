@@ -23,7 +23,7 @@ public class Board {
      * @param state gibt an welcher Spielstein gesetzt wird
      * @return gibt die Info welcher Spieler als nächstes dran ist
      */
-    public boolean SetFieldState(int position, int state) {
+    public boolean setFieldState(int position, int state) {
         if (Checker.CheckValidMove(FieldStates, position)) {
             FieldStates[position] = state;
             return true;
@@ -34,7 +34,7 @@ public class Board {
     /**
      * gibt das Board in einer lesbaren Form in der Console aus
      */
-    public void RenderBoard() {
+    public void renderBoard() {
         String finalMessage = "";
         int counter = 1;
 
@@ -69,7 +69,7 @@ public class Board {
     /**
      * setzt das Board auf den Anfangszustand zurück
      */
-    public void ResetBoard() {
+    public void resetBoard() {
         Arrays.fill(FieldStates, 0);
     }
 }
