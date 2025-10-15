@@ -40,6 +40,7 @@ public class Board {
      * gibt das Board in einer lesbaren Form in der Console aus
      */
     public void renderBoard() {
+        /*
         String finalMessage = "";
         int counter = 1;
 
@@ -70,6 +71,40 @@ public class Board {
                         counter = 1;
                         finalMessage = "";
                     }
+            }
+        }
+        */
+
+        /**
+         * Provisorische funktionierende Version der Board Ausgabe.
+         */
+        System.out.println("---------------------------");
+        for (int i = 0; i < 9; i++) {
+            switch (FieldStates[i]) {
+                case 0:
+                    if ((i + 1) % 3 == 0) {
+                        System.out.println("|       |");
+                        System.out.println("---------------------------");
+                    } else {
+                        System.out.print("|       |");
+                    }
+                    break;
+                case 1:
+                    if ((i + 1) % 3 == 0) {
+                        System.out.println("|   X   |");
+                        System.out.println("---------------------------");
+                    } else {
+                        System.out.print("|   X   |");
+                    }
+                    break;
+                case 2:
+                    if ((i + 1) % 3 == 0) {
+                        System.out.println("|   O   |");
+                        System.out.println("---------------------------");
+                    } else {
+                        System.out.print("|   O   |");
+                    }
+                    break;
             }
         }
     }
