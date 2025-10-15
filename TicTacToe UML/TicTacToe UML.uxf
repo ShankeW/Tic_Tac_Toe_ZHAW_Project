@@ -11,7 +11,7 @@
     </coordinates>
     <panel_attributes>Board
 --
-- ValidMoveChecker: ValidMoveChecker
+- Checker: Checker
 - EndStateChecker: EndStateChecker
 - FieldStates: int[9]
 + PlayerTurn: Int
@@ -35,10 +35,10 @@ Stores Boardstate
       <w>341</w>
       <h>143</h>
     </coordinates>
-    <panel_attributes>InputController
+    <panel_attributes>UserInput
 --
 --
-+ InputController()
++ UserInput()
 + GetInput(): String
 - CheckInput(String Input): int
 --
@@ -76,10 +76,10 @@ Checks for Endstate:
       <w>396</w>
       <h>121</h>
     </coordinates>
-    <panel_attributes>ValidMoveChecker
+    <panel_attributes>Checker
 --
 --
-+ ValidMoveChecker()
++ Checker()
 + CheckValidMove(int[9] FieldStates, int Field): boolean
 --
 Responsibilities
@@ -148,7 +148,7 @@ Responsible for Starting the Game</panel_attributes>
     <panel_attributes>TicTacToe
 --
 - Board: Board
-- InputController: InputController
+- UserInput: UserInput
 - LanguageController: LanguageController
 --
 + TicTacToe()

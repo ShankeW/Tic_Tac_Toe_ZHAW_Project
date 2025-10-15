@@ -3,8 +3,8 @@ TL:DR wie unser TicTacToe und seine Klassen funktionieren:
 1. **Main** startet alles
 2. **TicTacToe** steuert alles
 3. Spielzustand im **Board**
-4. Eingaben über **InputController**
-5. Überprüfung mit **ValidMoveChecker**
+4. Eingaben über **UserInput**
+5. Überprüfung mit **Checker**
 6. & **EndstateChecker**
 7. Nachrichten an die Spieler mit **LanguageController**
 
@@ -18,6 +18,6 @@ TL:DR wie unser TicTacToe und seine Klassen funktionieren:
 
 Klassenverantwortung
 - Shenke - EndStateChecker, Board
-- Fabian - ValidMoveChecker, Board
-- Ahalya - InputController, TicTacToe
+- Fabian - Checker, Board
+- Ahalya - UserInput, TicTacToe
 - Hunter - LanguageController, TicTacToe

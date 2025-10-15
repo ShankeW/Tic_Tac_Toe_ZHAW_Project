@@ -1,11 +1,11 @@
 public class TicTacToe {
     Board board;
-    InputController inputController;
+    UserInput userInput;
     LanguageController languageController;
 
     public TicTacToe(){
         this.board = new Board();
-        this.inputController = new InputController();
+        this.userInput = new UserInput();
         this.languageController = new LanguageController();
     }
 
