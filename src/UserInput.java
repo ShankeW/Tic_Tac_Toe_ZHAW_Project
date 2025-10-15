@@ -1,13 +1,18 @@
+import java.util.Scanner;
+
 public class UserInput {
     public UserInput() {
 
     }
 
     public String getInput() {
-        return "";
+        Scanner input = new Scanner(System.in);
+        return input.nextLine();
     }
 
-    private int checkInput (String input) {
-        return 0;
-    }
+    public int checkInput (String input) {
+            int zahl = Integer.parseInt(input.replaceAll("[^0-9]", ""));
+
+            return zahl;
+        }
 }
