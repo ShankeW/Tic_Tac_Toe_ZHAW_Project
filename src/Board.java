@@ -1,4 +1,3 @@
-import java.lang.reflect.Field;
 import java.util.Arrays;
 
 public class Board {
@@ -26,6 +25,12 @@ public class Board {
     public boolean setFieldState(int position, int state) {
         if (Checker.CheckValidMove(FieldStates, position)) {
             FieldStates[position] = state;
+            EndState = EndStateChecker.CheckForEndState(FieldStates);
+            if (PlayerTurn == 1) {
+                PlayerTurn = 2;
+            } else {
+                PlayerTurn = 1;
+            }
             return true;
         }
         return false;
@@ -45,6 +50,7 @@ public class Board {
                 if (counter == 3) {
                     System.out.println(finalMessage);
                     counter = 1;
+                    finalMessage = "";
                 }
             }
             else if (field == 1) {
@@ -53,6 +59,7 @@ public class Board {
                 if (counter == 3) {
                     System.out.println(finalMessage);
                     counter = 1;
+                    finalMessage = "";
                 }
             }
             else if (field == 2) {
@@ -61,6 +68,7 @@ public class Board {
                     if (counter == 3) {
                         System.out.println(finalMessage);
                         counter = 1;
+                        finalMessage = "";
                     }
             }
         }
