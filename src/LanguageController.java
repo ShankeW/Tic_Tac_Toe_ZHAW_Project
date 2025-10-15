@@ -1,10 +1,15 @@
 public class LanguageController {
-    int LanguageSetting;
-    String[] EnglishMessages;
-    String[] GermanMessages;
+    private int LanguageSetting;
+    private final String[] EnglishMessages;
+    private final String[] GermanMessages;
 
     public LanguageController() {
-
+        this.EnglishMessages = new String[]{
+                ""
+        };
+        this.GermanMessages = new String[]{
+                ""
+        };
     }
     //Sets the Languge Setting with an Int
     public void setLanguageSetting(int languageSetting) {
@@ -13,7 +18,10 @@ public class LanguageController {
 
     //Gets a Message in the Set Language by the given Int
     public String getMessage(int messageIndex){
-
-        return "";
+        return switch (LanguageSetting) {
+            case 1 -> EnglishMessages[messageIndex];
+            case 2 -> GermanMessages[messageIndex];
+            default -> "";
+        };
     }
 }
