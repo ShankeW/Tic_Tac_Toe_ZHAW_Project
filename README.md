@@ -21,3 +21,8 @@ Klassenverantwortung
 - Fabian - Checker, Board
 - Ahalya - UserInput, TicTacToe
 - Hunter - LanguageController, TicTacToe
+
+Namenänderung:
+Um Verwirrung zu vermeiden und mehr spezifisch zu sein, werden Namen für zwei Klassen geändert:
+- "InputController" zu "UserInput"
+- "ValidMoveChecker" zu "Checker"
