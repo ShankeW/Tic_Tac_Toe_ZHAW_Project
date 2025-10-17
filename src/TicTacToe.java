@@ -28,14 +28,17 @@ public class TicTacToe {
 
             while(!currentTurnFinished){
                 if (currentPlayerTurn == 1) { // X Turn
-                    sendMessage(languageController.getMessage(0));
+                    sendMessage(languageController.getMessage(0)); //X's Turn
                 } else if (currentPlayerTurn == 2) {
-                    sendMessage(languageController.getMessage(0));
+                    sendMessage(languageController.getMessage(1)); //O's Turn
                 }
                 int moveInput = userInput.checkInput(userInput.getInput());
-
+                if (moveInput > 9 || moveInput < 1){
+                    sendMessage(languageController.getMessage(5)); //Invalid Position
+                }
+                sendMessage(Integer.toString(moveInput));
                 if (!board.setFieldState(moveInput, currentPlayerTurn)) {
-
+                    sendMessage(languageController.getMessage(6)); //Taken Position
                 } else {
                     currentTurnFinished = true;
                 }
@@ -44,13 +47,13 @@ public class TicTacToe {
 
         switch (board.EndState) {
             case 1:
-                sendMessage(languageController.getMessage(0));
+                sendMessage(languageController.getMessage(2)); //X won
                 break;
             case 2:
-                sendMessage(languageController.getMessage(1));
+                sendMessage(languageController.getMessage(3)); //O won
                 break;
             case 3:
-                sendMessage(languageController.getMessage(2));
+                sendMessage(languageController.getMessage(4)); //Tie
                 break;
         }
         
@@ -61,7 +64,7 @@ public class TicTacToe {
     }
 
     public void restartGame(){
-        this.board = new Board();
+        this.board.resetBoard();
         playTurn();
     }
 }
