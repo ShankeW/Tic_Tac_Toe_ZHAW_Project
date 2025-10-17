@@ -40,71 +40,18 @@ public class Board {
      * gibt das Board in einer lesbaren Form in der Console aus
      */
     public void renderBoard() {
-        /*
-        String finalMessage = "";
-        int counter = 1;
-
-        for (int field : FieldStates) {
-            if (field == 0) {
-                finalMessage += "|–––––|";
-                counter += 1;
-                if (counter == 3) {
-                    System.out.println(finalMessage);
-                    counter = 1;
-                    finalMessage = "";
-                }
-            }
-            else if (field == 1) {
-                finalMessage += "|––X––|";
-                counter += 1;
-                if (counter == 3) {
-                    System.out.println(finalMessage);
-                    counter = 1;
-                    finalMessage = "";
-                }
-            }
-            else if (field == 2) {
-                finalMessage += "|––O––|";
-                counter += 1;
-                    if (counter == 3) {
-                        System.out.println(finalMessage);
-                        counter = 1;
-                        finalMessage = "";
-                    }
-            }
-        }
-        */
-
-        /**
-         * Provisorische funktionierende Version der Board Ausgabe.
-         */
         System.out.println("---------------------------");
         for (int i = 0; i < 9; i++) {
-            switch (FieldStates[i]) {
-                case 0:
-                    if ((i + 1) % 3 == 0) {
-                        System.out.println("|       |");
-                        System.out.println("---------------------------");
-                    } else {
-                        System.out.print("|       |");
-                    }
-                    break;
-                case 1:
-                    if ((i + 1) % 3 == 0) {
-                        System.out.println("|   X   |");
-                        System.out.println("---------------------------");
-                    } else {
-                        System.out.print("|   X   |");
-                    }
-                    break;
-                case 2:
-                    if ((i + 1) % 3 == 0) {
-                        System.out.println("|   O   |");
-                        System.out.println("---------------------------");
-                    } else {
-                        System.out.print("|   O   |");
-                    }
-                    break;
+            int position = i + 1;
+            String FieldSymbol = switch (FieldStates[i]) {
+                case 1 -> "X";
+                case 2 -> "O";
+                default -> Integer.toString(position);
+            };
+            System.out.print("|   "+ FieldSymbol +"   |");
+            if ((position) % 3 == 0) {
+                System.out.println();
+                System.out.println("---------------------------");
             }
         }
     }
@@ -116,3 +63,6 @@ public class Board {
         Arrays.fill(FieldStates, 0);
     }
 }
+
+
+
