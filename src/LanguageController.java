@@ -23,9 +23,14 @@ public class LanguageController {
                 "Diese Postion ist schon genommen"
         };
     }
-    //Sets the Languge Setting with an Int
-    public void setLanguageSetting(int languageSetting) {
-        this.LanguageSetting = languageSetting;
+    //Sets the Language Setting with an Int
+    public boolean setLanguageSetting(int languageSetting) {
+        if (languageSetting == 1 || languageSetting == 2) {
+            this.LanguageSetting = languageSetting;
+            return true;
+        } else {
+            return false;
+        }
     }
 
     //Gets a Message in the Set Language by the given Int

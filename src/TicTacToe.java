@@ -18,7 +18,10 @@ public class TicTacToe {
 
         int selection = userInput.checkInput(userInput.getInput());
 
-        languageController.setLanguageSetting(selection);
+        if(!languageController.setLanguageSetting(selection)){
+            sendMessage("Invalid Language / Ungültige Sprache");
+            continue;
+        }
 
         board.renderBoard();
 
