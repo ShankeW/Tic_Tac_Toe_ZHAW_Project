@@ -17,12 +17,6 @@ public class EndStateChecker {
     public int CheckForEndState(int[] FieldState){
         // TODO
 
-        for (int i : FieldState) {    // Kontrolliere, ob das Spiel fortgesetzt werden soll
-            if (i == 0) {
-                return 0;
-            }
-        }
-
         for (int i = 0; i < 3; i += 3){    // Kontrolliere Zeilen
              if (FieldState[i] == 1 && FieldState[i + 1] == 1 && FieldState[i + 2] == 1){
                  return 1;
@@ -49,6 +43,12 @@ public class EndStateChecker {
             return 1;
         } else if (FieldState[2] == 2 && FieldState[4] == 2 && FieldState[6] == 2){
             return 2;
+        }
+
+        for (int i : FieldState) {    // Kontrolliere, ob das Spiel fortgesetzt werden soll
+            if (i == 0) {
+                return 0;
+            }
         }
 
         return 3;
