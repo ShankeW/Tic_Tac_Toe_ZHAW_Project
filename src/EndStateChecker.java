@@ -16,41 +16,37 @@ public class EndStateChecker {
      */
     public int CheckForEndState(int[] FieldState){
         // TODO
+        int x = 0; int y = 0; int z = 0;
+        int indexInc = 0; // helper variable for calculating the correct index for colum check
+        int cntNull = 0; // records the appearance of empty fields
 
-        for (int i = 0; i < 3; i += 3){    // Kontrolliere Zeilen
-             if (FieldState[i] == 1 && FieldState[i + 1] == 1 && FieldState[i + 2] == 1){
-                 return 1;
-             } else if (FieldState[i] == 2 && FieldState[i + 1] == 2 && FieldState[i + 2] == 2){
-                 return 2;
-             }
-        }
+        // check on every field with its corresponding neighbours for "victory" condition
+        for (int i = 0; i < FieldState.length; i++){
+            if (FieldState[i] == 0) cntNull++;
+            if (i != 0 && i % 3 == 0) indexInc += 3;
+            for (int j = 0; j < 3; j++){
+                if (j == 0) {
+                    x = i;
+                    y = (i + 3) % 9;
+                    z = (i + 2 * 3) % 9;
+                } else if (j == 1) {
+                    x = i;
+                    y = indexInc + ((i + 1) % 3);
+                    z = indexInc + ((i + 2) % 3);
+                } else if (j == 2 && (i % 2 == 0) && i != 4) {
+                    x = i;
+                    y = 4;
+                    z = 9 - (i + 1);
+                }
 
-        for (int i = 0; i < 3; i++){    // Kontrolliere Spalten
-            if (FieldState[i] == 1 && FieldState[i + 3] == 1 && FieldState[i + 6] == 1){
-                return 1;
-            } else if (FieldState[i] == 2 && FieldState[i + 3] == 2 && FieldState[i + 6] == 2){
-                return 2;
+                if (FieldState[x] == 1 && FieldState[y] == 1 && FieldState[z] == 1){
+                    return 1;
+                } else if (FieldState[x] == 2 && FieldState[y] == 2 && FieldState[z] == 2){
+                    return 2;
+                }
             }
         }
 
-        // Kontrolliere Diagonale
-        if (FieldState[0] == 1 && FieldState[4] == 1 && FieldState[8] == 1){
-            return 1;
-        } else if (FieldState[0] == 2 && FieldState[4] == 2 && FieldState[8] == 2){
-            return 2;
-        }
-        if (FieldState[2] == 1 && FieldState[4] == 1 && FieldState[6] == 1){
-            return 1;
-        } else if (FieldState[2] == 2 && FieldState[4] == 2 && FieldState[6] == 2){
-            return 2;
-        }
-
-        for (int i : FieldState) {    // Kontrolliere, ob das Spiel fortgesetzt werden soll
-            if (i == 0) {
-                return 0;
-            }
-        }
-
-        return 3;
+        return (cntNull != 0) ? 0 : 3;
     }
 }
