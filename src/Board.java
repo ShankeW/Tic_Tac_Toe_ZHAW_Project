@@ -24,7 +24,7 @@ public class Board {
      */
     public boolean setFieldState(int position, int state) {
         if (Checker.CheckValidMove(FieldStates, position)) {
-            FieldStates[position] = state;
+            FieldStates[position-1] = state;
             EndState = EndStateChecker.CheckForEndState(FieldStates);
             if (PlayerTurn == 1) {
                 PlayerTurn = 2;
