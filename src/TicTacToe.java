@@ -16,34 +16,37 @@ public class TicTacToe {
         sendMessage("1 - English");
         sendMessage("2 - Deutsch");
 
-        String input = userInput.getInput();
+        String languageInput = userInput.getInput();
 
-        if (!input.isEmpty()){
-            int selection = userInput.checkInput(input);
+        if (!languageInput.isEmpty()){
+            int selection = userInput.checkInput(languageInput);
             if(!languageController.setLanguageSetting(selection)){
                 sendMessage("Invalid Language / Ungültige Sprache");
                 continue;
             }
         }
 
-        board.renderBoard();
-
         int currentPlayerTurn = board.PlayerTurn;
 
         boolean currentTurnFinished = false;
 
             while(!currentTurnFinished){
+                board.renderBoard();
                 if (currentPlayerTurn == 1) { // X Turn
                     sendMessage(languageController.getMessage(0)); //X's Turn
                 } else if (currentPlayerTurn == 2) {
                     sendMessage(languageController.getMessage(1)); //O's Turn
                 }
-                int moveInput = userInput.checkInput(userInput.getInput());
-                if (moveInput > 9 || moveInput < 1){
-                    sendMessage(languageController.getMessage(5)); //Invalid Position
+                int movePosition = userInput.checkInput(userInput.getInput());
+                if (movePosition < 0) {
+                    sendMessage(languageController.getMessage(7)); //Invalid Input
+                    continue;
                 }
-                sendMessage(Integer.toString(moveInput));
-                if (!board.setFieldState(moveInput, currentPlayerTurn)) {
+                if (movePosition > 9 || movePosition < 1){
+                    sendMessage(languageController.getMessage(5)); //Invalid Position
+                    continue;
+                }
+                if (!board.setFieldState(movePosition, currentPlayerTurn)) {
                     sendMessage(languageController.getMessage(6)); //Taken Position
                 } else {
                     currentTurnFinished = true;

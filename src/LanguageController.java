@@ -11,7 +11,8 @@ public class LanguageController {
                 "O has won the Game!",
                 "Tie!",
                 "This Move is not a valid Position",
-                "This Position has already been taken"
+                "This Position has already been taken",
+                "This is not a valid Input",
         };
         this.GermanMessages = new String[]{
                 "X am Zug",
@@ -20,7 +21,8 @@ public class LanguageController {
                 "O hat den Spiel gewonnen!",
                 "Unentschieden!",
                 "Diese Zug ist nicht eine valide Position",
-                "Diese Postion ist schon genommen"
+                "Diese Postion ist schon genommen",
+                "Dies ist kein gültige Input"
         };
     }
     //Sets the Language Setting with an Int
