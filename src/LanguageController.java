@@ -1,5 +1,5 @@
 public class LanguageController {
-    private int LanguageSetting;
+    private int LanguageSetting = 1;
     private final String[] EnglishMessages;
     private final String[] GermanMessages;
 

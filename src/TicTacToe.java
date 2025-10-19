@@ -16,11 +16,14 @@ public class TicTacToe {
         sendMessage("1 - English");
         sendMessage("2 - Deutsch");
 
-        int selection = userInput.checkInput(userInput.getInput());
+        String input = userInput.getInput();
 
-        if(!languageController.setLanguageSetting(selection)){
-            sendMessage("Invalid Language / Ungültige Sprache");
-            continue;
+        if (!input.isEmpty()){
+            int selection = userInput.checkInput(input);
+            if(!languageController.setLanguageSetting(selection)){
+                sendMessage("Invalid Language / Ungültige Sprache");
+                continue;
+            }
         }
 
         board.renderBoard();
@@ -46,6 +49,10 @@ public class TicTacToe {
                     currentTurnFinished = true;
                 }
             }
+        }
+
+        if(board.EndState > 0){
+            board.renderBoard();
         }
 
         switch (board.EndState) {
