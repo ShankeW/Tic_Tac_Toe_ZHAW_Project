@@ -6,6 +6,11 @@ public class Checker {
 
     public boolean CheckValidMove(int[] FieldStates, int Field) {
         // TODO
-        return false;
+        if (Field < 1 || Field > 9){
+            return false;
+        } else if (FieldStates[Field - 1] != 0) {
+            return false;
+        }
+        return true;
     }
 }
