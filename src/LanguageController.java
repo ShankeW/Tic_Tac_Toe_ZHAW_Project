@@ -15,14 +15,14 @@ public class LanguageController {
                 "This is not a valid Input",
         };
         this.GermanMessages = new String[]{
-                "X am Zug",
-                "O am Zug",
-                "X hat den Spiel gewonnen!",
-                "O hat den Spiel gewonnen!",
+                "X ist am Zug",
+                "O ist am Zug",
+                "X hat das Spiel gewonnen!",
+                "O hat das Spiel gewonnen!",
                 "Unentschieden!",
-                "Diese Zug ist nicht eine valide Position",
-                "Diese Postion ist schon genommen",
-                "Dies ist kein gültige Input"
+                "Dieser Zug ist nicht eine gültige Position",
+                "Diese Postion wurde bereits eingenommen",
+                "Diese ist keine gültige Eingabe"
         };
     }
     //Sets the Language Setting with an Int
