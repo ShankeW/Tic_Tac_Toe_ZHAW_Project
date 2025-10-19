@@ -10,6 +10,7 @@ public class TicTacToe {
     }
 
     private void playTurn(){
+        board.renderBoard();
         while(board.EndState == 0) {
 
         sendMessage("Language / Sprache");
@@ -31,7 +32,6 @@ public class TicTacToe {
         boolean currentTurnFinished = false;
 
             while(!currentTurnFinished){
-                board.renderBoard();
                 if (currentPlayerTurn == 1) { // X Turn
                     sendMessage(languageController.getMessage(0)); //X's Turn
                 } else if (currentPlayerTurn == 2) {
@@ -52,9 +52,6 @@ public class TicTacToe {
                     currentTurnFinished = true;
                 }
             }
-        }
-
-        if(board.EndState > 0){
             board.renderBoard();
         }
 
