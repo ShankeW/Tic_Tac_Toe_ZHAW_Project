@@ -23,9 +23,9 @@ public class Board {
      * @return gibt die Info welcher Spieler als nächstes dran ist
      */
     public boolean setFieldState(int position, int state) {
-        if (ValidMoveChecker.CheckValidMove(FieldStates, position)) {
+        if (ValidMoveChecker.Check(FieldStates, position)) {
             FieldStates[position-1] = state;
-            EndState = EndStateChecker.CheckForEndState(FieldStates);
+            EndState = EndStateChecker.Check(FieldStates);
             if (PlayerTurn == 1) {
                 PlayerTurn = 2;
             } else {

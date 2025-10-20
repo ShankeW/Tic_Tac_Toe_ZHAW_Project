@@ -14,7 +14,7 @@ public class EndStateChecker {
      *     2 = Spieler mit dem Spielstein O hat gewonnen
      *     3 = Tie / Unentschieden
      */
-    public int CheckForEndState(int[] FieldState){
+    public int Check(int[] FieldState){
         // TODO
         int x = 0; int y = 0; int z = 0;
         int indexInc = 0; // helper variable for calculating the correct index for colum check

@@ -4,7 +4,7 @@ public class ValidMoveChecker {
     public ValidMoveChecker() {
     }
 
-    public boolean CheckValidMove(int[] FieldStates, int Field) {
+    public boolean Check(int[] FieldStates, int Field) {
         // TODO
         if (Field < 1 || Field > 9){
             return false;

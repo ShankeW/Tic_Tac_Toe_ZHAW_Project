@@ -9,7 +9,7 @@ public class TestEndStateChecker {
     public void testContinue(){
         EndStateChecker t0 = new EndStateChecker();
         int[] state0 = {0, 1, 0, 1, 0, 2, 1, 2, 0};
-        int result = t0.CheckForEndState(state0);
+        int result = t0.Check(state0);
         Assertions.assertEquals(0, result, "Output should be 0");
     }
 
@@ -18,7 +18,7 @@ public class TestEndStateChecker {
     public void testContinue2(){
         EndStateChecker t0 = new EndStateChecker();
         int[] state0 = {0, 0, 0, 0, 0, 0, 0, 0, 0};
-        int result = t0.CheckForEndState(state0);
+        int result = t0.Check(state0);
         Assertions.assertEquals(0, result, "Output should be 0");
     }
 
@@ -27,7 +27,7 @@ public class TestEndStateChecker {
     public void testWinConditionRaw(){
         EndStateChecker t0 = new EndStateChecker();
         int[] state0 = {1, 1, 1, 2, 2, 1, 2, 1, 2};
-        int result = t0.CheckForEndState(state0);
+        int result = t0.Check(state0);
         Assertions.assertEquals(1, result, "Output should be 1");
     }
 
@@ -36,7 +36,7 @@ public class TestEndStateChecker {
     public void testWinConditionColumn(){
         EndStateChecker t0 = new EndStateChecker();
         int[] state0 = {1, 2, 1, 2, 2, 1, 1, 2, 2};
-        int result = t0.CheckForEndState(state0);
+        int result = t0.Check(state0);
         Assertions.assertEquals(2, result, "Output should be 2");
     }
 
@@ -45,7 +45,7 @@ public class TestEndStateChecker {
     public void testWinConditionDiagonal(){
         EndStateChecker t0 = new EndStateChecker();
         int[] state0 = {1, 2, 1, 2, 1, 2, 2, 2, 1};
-        int result = t0.CheckForEndState(state0);
+        int result = t0.Check(state0);
         Assertions.assertEquals(1, result, "Output should be 1");
     }
 
@@ -57,9 +57,9 @@ public class TestEndStateChecker {
         int[] state1 = {2, 1, 0, 1, 2, 0, 0, 1, 2};
 
         int result = 0;
-        result = t0.CheckForEndState(state0);
+        result = t0.Check(state0);
         Assertions.assertEquals(1, result, "Output should be 1");
-        result = t0.CheckForEndState(state1);
+        result = t0.Check(state1);
         Assertions.assertEquals(2, result, "Output should be 2");
     }
 
@@ -68,7 +68,7 @@ public class TestEndStateChecker {
     public void testTieCondition(){
         EndStateChecker t0 = new EndStateChecker();
         int[] state0 = {2, 1, 1, 1, 2, 2, 2, 1, 1};
-        int result = t0.CheckForEndState(state0);
+        int result = t0.Check(state0);
         Assertions.assertEquals(3, result, "Output should be 3");
     }
 }
