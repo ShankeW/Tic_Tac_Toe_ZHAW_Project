@@ -24,9 +24,9 @@ Klassenverantwortung
 
 
 
-Updates:
+Klassendiagramm Veränderungen:
 
 Namenänderung:
 Um Verwirrung zu vermeiden und mehr spezifisch zu sein, werden Namen für zwei Klassen geändert:
-- "InputController" zu "UserInput"
-- "ValidMoveChecker" zu "ValidMoveChecker"
+- Der Klasse Name "InputController" zu "UserInput" geändert.
+- Der Methode Name "CheckValidMove" aus der Klasse ValidMoveChecker zu "Check" geändert.
