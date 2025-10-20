@@ -1,13 +1,19 @@
 import java.util.Arrays;
 
+/**
+ * Diese Klasse ist zuständig dafür, die sämtliche Informationen über das Spielbrett zu speichern. Weiter
+ * ist sie auch verantwortlich das ganze Spielbrett in der Konsole darzustellen.
+ */
 public class Board {
     private ValidMoveChecker ValidMoveChecker;
     private EndStateChecker EndStateChecker;
     private int[] FieldStates;
-    public int PlayerTurn; // 1 = Player_1_X, 2 = Player_2_O
-    public int EndState; // 0 = Continue, 1 = Player_1_X Win, 2 = Player_2_O Win, 3 = Unentschieden
+    public int PlayerTurn; // 1 = Player X, 2 = Player O
+    public int EndState; // 0 = Continue, 1 = Player X Win, 2 = Player O Win, 3 = Unentschieden
 
-    // Constructor
+    /**
+     * Mit diesem Konstruktor wird das Objekt dieser Klasse instanziiert.
+     */
     public Board() {
         ValidMoveChecker = new ValidMoveChecker();
         EndStateChecker = new EndStateChecker();
@@ -17,10 +23,10 @@ public class Board {
     }
 
     /**
-     * validiert einen Zug, setzt das Feld und gibt true zurück, wenn alles geklappt hat
-     * @param position gibt an wo ein Spieler einen Spielstein setzt
-     * @param state gibt an welcher Spielstein gesetzt wird
-     * @return gibt die Info welcher Spieler als nächstes dran ist
+     * Validiert einen Zug, setzt das Feld und gibt true zurück, wenn alles geklappt hat
+     * @param position gibt an wo ein Spieler einen Spielstein setzt.
+     * @param state gibt an, welcher Spielstein gesetzt wird.
+     * @return gibt die Information an, welcher Spieler als Nächstes dran ist.
      */
     public boolean setFieldState(int position, int state) {
         if (ValidMoveChecker.Check(FieldStates, position)) {
@@ -37,7 +43,7 @@ public class Board {
     }
 
     /**
-     * gibt das Board in einer lesbaren Form in der Console aus
+     * Gibt das Board in einer lesbaren Form in der Konsole aus
      */
     public void renderBoard() {
         System.out.println("---------------------------");
@@ -57,7 +63,7 @@ public class Board {
     }
 
     /**
-     * setzt das Board auf den Anfangszustand zurück
+     * Setzt das Board auf den Anfangszustand zurück
      */
     public void resetBoard() {
         Arrays.fill(FieldStates, 0);
