@@ -12,7 +12,7 @@ public class TestLanguageController {
         languageController.setLanguageSetting(1);
         assertEquals("X's Turn", languageController.getMessage(0));
         languageController.setLanguageSetting(2);
-        assertEquals("X am Zug", languageController.getMessage(0));
+        assertEquals("X ist am Zug", languageController.getMessage(0));
     }
 
     @Test
