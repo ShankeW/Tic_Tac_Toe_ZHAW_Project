@@ -30,6 +30,7 @@ Namenänderung:
 Um Verwirrungen zu vermeiden und mehr spezifisch zu sein, werden Namen für folgende Klassen und Methoden geändert:
 - Der Klasse Name "InputController" zu "UserInput" geändert.
 - Der Methode Name "CheckValidMove" aus der Klasse ValidMoveChecker zu "Check" geändert.
+- Der Methode Name "CheckEndState" aus der Klasse EndStateChecker zu "Check" geändert.
 
 Die Bedeutung des Rückgabewerts der Methode "Check" aus der Klasse "EndStateChecker" wird geändert. 
 Aktuelle Bedeutung:
@@ -37,3 +38,10 @@ Aktuelle Bedeutung:
 1 = Spieler mit dem Spielstein X hat gewonnen
 2 = Spieler mit dem Spielstein O hat gewonnen
 3 = Tie / Unentschieden
+
+Methodenänderung:
+- LanguageController:
+GetMessage() braucht keine int Language Parameter, da es schon in der Klasse gespeichert wird.
+GetMessage() gibt eine String zurück, im Klassendiagramm war das nicht richtig beschrieben.
+- UserInput:
+CheckInput ist auf public geändert.
