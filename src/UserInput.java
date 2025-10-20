@@ -29,7 +29,7 @@ public class UserInput {
      * @return Gibt die geparste Zahl zurück (z. B. Feldnummer im Spielfeld).
      */
     public int checkInput (String input) {
-        String clearedInput = input.replaceAll("[^0-9]", "");
+        String clearedInput = input.replaceAll("[^0-9^-]", "");
         int zahl;
         if (clearedInput.isEmpty()){
             zahl = -1;
