@@ -32,9 +32,12 @@ public class UserInput {
         String clearedInput = input.replaceAll("[^0-9^-]", "");
         int zahl;
         if (clearedInput.isEmpty()){
-            zahl = -1;
+            return -1;
         } else {
             zahl = Integer.parseInt(clearedInput);
+        }
+        if (zahl < 0 || zahl > 9) {
+            return -1;
         }
             return zahl;
         }
