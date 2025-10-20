@@ -61,6 +61,7 @@ public class Board {
      */
     public void resetBoard() {
         Arrays.fill(FieldStates, 0);
+        EndState = 0;
     }
 }
 
