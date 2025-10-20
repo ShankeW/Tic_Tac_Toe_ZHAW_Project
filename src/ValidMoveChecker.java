@@ -1,7 +1,7 @@
-public class Checker {
+public class ValidMoveChecker {
 
     // Constructor
-    public Checker() {
+    public ValidMoveChecker() {
     }
 
     public boolean CheckValidMove(int[] FieldStates, int Field) {

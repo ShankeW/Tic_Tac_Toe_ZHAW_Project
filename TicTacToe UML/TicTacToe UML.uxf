@@ -11,7 +11,7 @@
     </coordinates>
     <panel_attributes>Board
 --
-- Checker: Checker
+- ValidMoveChecker: ValidMoveChecker
 - EndStateChecker: EndStateChecker
 - FieldStates: int[9]
 + PlayerTurn: Int
@@ -76,10 +76,10 @@ Checks for Endstate:
       <w>396</w>
       <h>121</h>
     </coordinates>
-    <panel_attributes>Checker
+    <panel_attributes>ValidMoveChecker
 --
 --
-+ Checker()
++ ValidMoveChecker()
 + CheckValidMove(int[9] FieldStates, int Field): boolean
 --
 Responsibilities

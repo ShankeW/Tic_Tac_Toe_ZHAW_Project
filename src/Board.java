@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class Board {
-    private Checker Checker;
+    private ValidMoveChecker ValidMoveChecker;
     private EndStateChecker EndStateChecker;
     private int[] FieldStates;
     public int PlayerTurn; // 1 = Player_1_X, 2 = Player_2_O
@@ -9,7 +9,7 @@ public class Board {
 
     // Constructor
     public Board() {
-        Checker = new Checker();
+        ValidMoveChecker = new ValidMoveChecker();
         EndStateChecker = new EndStateChecker();
         FieldStates = new int[9];
         PlayerTurn = 1;
@@ -23,7 +23,7 @@ public class Board {
      * @return gibt die Info welcher Spieler als nächstes dran ist
      */
     public boolean setFieldState(int position, int state) {
-        if (Checker.CheckValidMove(FieldStates, position)) {
+        if (ValidMoveChecker.CheckValidMove(FieldStates, position)) {
             FieldStates[position-1] = state;
             EndState = EndStateChecker.CheckForEndState(FieldStates);
             if (PlayerTurn == 1) {
