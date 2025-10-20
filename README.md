@@ -30,3 +30,10 @@ Namenänderung:
 Um Verwirrungen zu vermeiden und mehr spezifisch zu sein, werden Namen für folgende Klassen und Methoden geändert:
 - Der Klasse Name "InputController" zu "UserInput" geändert.
 - Der Methode Name "CheckValidMove" aus der Klasse ValidMoveChecker zu "Check" geändert.
+
+Die Bedeutung des Rückgabewerts der Methode "Check" aus der Klasse "EndStateChecker" wird geändert. 
+Aktuelle Bedeutung:
+0 = Das Spiel soll fortgesetzt werden
+1 = Spieler mit dem Spielstein X hat gewonnen
+2 = Spieler mit dem Spielstein O hat gewonnen
+3 = Tie / Unentschieden
