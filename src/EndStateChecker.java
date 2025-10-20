@@ -1,3 +1,6 @@
+/**
+ * Die Klasse EndStateChecker kontrolliert den momentanen Zustand des Spielbretts/Board.
+ */
 public class EndStateChecker {
     /**
      * Initialisiere das Objekt dieser Klasse
@@ -6,8 +9,8 @@ public class EndStateChecker {
 
     /**
      * Die Methode kontrolliert den Status des Spielbretts.
-     * @param FieldState wiedergibt das komplette Spielbrett
-     * @return gibt zurück, ob das Spiel zum Ende ist.
+     * @param FieldState wiedergibt das komplette Spielbrett.
+     * @return gibt zurück, ob das Spiel zum Ende ist oder weiter gespielt werden soll.
      * Bedeutung von Rückgabewert:
      *     0 = Das Spiel soll fortgesetzt werden
      *     1 = Spieler mit dem Spielstein X hat gewonnen
@@ -17,10 +20,10 @@ public class EndStateChecker {
     public int Check(int[] FieldState){
         // TODO
         int x = 0; int y = 0; int z = 0;
-        int indexInc = 0; // helper variable for calculating the correct index for colum check
-        int cntNull = 0; // records the appearance of empty fields
+        int indexInc = 0; // Hilfe-Variable für die Indexberechnung, die für Kolonnen Kontrollieren verwendet wird.
+        int cntNull = 0; // Zählt das Auftauchen von leeren Feldern auf.
 
-        // check on every field with its corresponding neighbours for "victory" condition
+        // Kontrolliere bei jedem Feld mit den dazugehörigen Nachbarn, ob der Gewinnzustand erreicht wird
         for (int i = 0; i < FieldState.length; i++){
             if (FieldState[i] == 0) cntNull++;
             if (i != 0 && i % 3 == 0) indexInc += 3;
