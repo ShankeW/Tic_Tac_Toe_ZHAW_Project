@@ -26,13 +26,9 @@ public class TicTacToe {
                 continue;
             }
         }
-
         int currentPlayerTurn = Board.playerTurn;
-
-        boolean currentTurnFinished = false;
-
-            processPosition(currentTurnFinished, currentPlayerTurn);
-            Board.renderBoard();
+        processPosition(currentPlayerTurn);
+        Board.renderBoard();
         }
 
         switch (Board.endState) {
@@ -49,7 +45,8 @@ public class TicTacToe {
 
     }
 
-    private void processPosition(boolean currentTurnFinished, int currentPlayerTurn) {
+    private void processPosition(int currentPlayerTurn) {
+        boolean currentTurnFinished = false;
         while(!currentTurnFinished){
             Board.renderBoard();
             if (currentPlayerTurn == 1) { // X Turn
