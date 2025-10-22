@@ -35,7 +35,12 @@ public class LanguageController {
         }
     }
 
-    //Gets a Message in the Set Language by the given Int
+    /**
+     * Holt eine Nachricht von der per Parameter entschiedene Index.
+     * Gewählt wird entweder EnglishMessages oder DeutschMessages gemäss die aktuelle languageSetting
+     * @param messageIndex Spezifiziert die gewünschte Nachricht
+     * @return Gibt die Nachricht zurück
+     */
     public String getMessage(int messageIndex){
         return switch (languageSetting) {
             case 1 -> EnglishMessages[messageIndex];
