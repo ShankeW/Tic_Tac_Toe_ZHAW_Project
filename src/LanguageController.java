@@ -1,8 +1,19 @@
+/**
+ * Diese Klasse ist zuständig für die Abspeicherung sämtliche Nachrichten,
+ * die je nach Spielzustand oder Benutzer Eingabe ausgegeben werden.
+ * Das Datenfeld "languageSetting" nimmt Werte 1 und 2 auf wo:
+ *  1 = English
+ *  2 = Deutsch
+ * entspricht.
+ */
 public class LanguageController {
     private int languageSetting = 1;
     private final String[] EnglishMessages;
     private final String[] GermanMessages;
 
+    /**
+     * Der Instanz dieser Klasse wird erzeugt.
+     */
     public LanguageController() {
         this.EnglishMessages = new String[]{
                 "X's Turn",
@@ -25,7 +36,14 @@ public class LanguageController {
                 "Diese ist keine gültige Eingabe"
         };
     }
-    //Sets the Language Setting with an Int
+
+    /**
+     * Die Sprache wird durch diese Methode und den Parameter gesetzt, bzw. verändert.
+     * @param languageSetting gibt an, welche Sprache languageSetting nun annehmen soll.
+     * @return gibt an, ob eine Sprache Änderung durchgeführt werden darf.
+     *  true: Veränderung erlaubt
+     *  false: Veränderung nicht erlaubt. Eingabe ungültig.
+     */
     public boolean setLanguageSetting(int languageSetting) {
         if (languageSetting == 1 || languageSetting == 2) {
             this.languageSetting = languageSetting;
