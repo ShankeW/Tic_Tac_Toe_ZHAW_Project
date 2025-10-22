@@ -1,70 +1,70 @@
 public class TicTacToe {
-    private Board board;
-    private UserInput userInput;
-    private LanguageController languageController;
+    private final Board Board;
+    private final UserInput UserInput;
+    private final LanguageController LanguageController;
 
     public TicTacToe(){
-        this.board = new Board();
-        this.userInput = new UserInput();
-        this.languageController = new LanguageController();
+        this.Board = new Board();
+        this.UserInput = new UserInput();
+        this.LanguageController = new LanguageController();
     }
 
     private void playTurn(){
 
-        while(board.EndState == 0) {
+        while(Board.endState == 0) {
 
         sendMessage("Language / Sprache");
         sendMessage("1 - English");
         sendMessage("2 - Deutsch");
 
-        String languageInput = userInput.getInput();
+        String languageInput = UserInput.getInput();
 
         if (!languageInput.isEmpty()){
-            int selection = userInput.checkInput(languageInput);
-            if(!languageController.setLanguageSetting(selection)){
+            int selection = UserInput.checkInput(languageInput);
+            if(!LanguageController.setLanguageSetting(selection)){
                 sendMessage("Invalid Language / Ungültige Sprache");
                 continue;
             }
         }
 
-        int currentPlayerTurn = board.PlayerTurn;
+        int currentPlayerTurn = Board.playerTurn;
 
         boolean currentTurnFinished = false;
 
             while(!currentTurnFinished){
-                board.renderBoard();
+                Board.renderBoard();
                 if (currentPlayerTurn == 1) { // X Turn
-                    sendMessage(languageController.getMessage(0)); //X's Turn
+                    sendMessage(LanguageController.getMessage(0)); //X's Turn
                 } else if (currentPlayerTurn == 2) {
-                    sendMessage(languageController.getMessage(1)); //O's Turn
+                    sendMessage(LanguageController.getMessage(1)); //O's Turn
                 }
-                int movePosition = userInput.checkInput(userInput.getInput());
+                int movePosition = UserInput.checkInput(UserInput.getInput());
                 if (movePosition < 0) {
-                    sendMessage(languageController.getMessage(7)); //Invalid Input
+                    sendMessage(LanguageController.getMessage(7)); //Invalid Input
                     continue;
                 }
                 if (movePosition > 9 || movePosition < 1){
-                    sendMessage(languageController.getMessage(5)); //Invalid Position
+                    sendMessage(LanguageController.getMessage(5)); //Invalid Position
                     continue;
                 }
-                if (!board.setFieldState(movePosition, currentPlayerTurn)) {
-                    sendMessage(languageController.getMessage(6)); //Taken Position
+                if (!Board.setFieldState(movePosition, currentPlayerTurn)) {
+                    sendMessage(LanguageController.getMessage(6)); //Taken Position
                 } else {
                     currentTurnFinished = true;
                 }
             }
-            board.renderBoard();
+            Board.renderBoard();
         }
 
-        switch (board.EndState) {
+        switch (Board.endState) {
             case 1:
-                sendMessage(languageController.getMessage(2)); //X won
+                sendMessage(LanguageController.getMessage(2)); //X won
                 break;
             case 2:
-                sendMessage(languageController.getMessage(3)); //O won
+                sendMessage(LanguageController.getMessage(3)); //O won
                 break;
             case 3:
-                sendMessage(languageController.getMessage(4)); //Tie
+                sendMessage(LanguageController.getMessage(4)); //Tie
                 break;
         }
         
@@ -75,7 +75,7 @@ public class TicTacToe {
     }
 
     public void restartGame(){
-        this.board.resetBoard();
+        this.Board.resetBoard();
         playTurn();
     }
 }

@@ -1,5 +1,5 @@
 public class LanguageController {
-    private int LanguageSetting = 1;
+    private int languageSetting = 1;
     private final String[] EnglishMessages;
     private final String[] GermanMessages;
 
@@ -28,7 +28,7 @@ public class LanguageController {
     //Sets the Language Setting with an Int
     public boolean setLanguageSetting(int languageSetting) {
         if (languageSetting == 1 || languageSetting == 2) {
-            this.LanguageSetting = languageSetting;
+            this.languageSetting = languageSetting;
             return true;
         } else {
             return false;
@@ -37,7 +37,7 @@ public class LanguageController {
 
     //Gets a Message in the Set Language by the given Int
     public String getMessage(int messageIndex){
-        return switch (LanguageSetting) {
+        return switch (languageSetting) {
             case 1 -> EnglishMessages[messageIndex];
             case 2 -> GermanMessages[messageIndex];
             default -> "";

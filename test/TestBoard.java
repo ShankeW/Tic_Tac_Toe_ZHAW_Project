@@ -12,10 +12,10 @@ public class TestBoard {
         board.setFieldState(5,2);
         board.setFieldState(3,1);
 
-        assertEquals(1,board.EndState);
+        assertEquals(1,board.endState);
 
         board.resetBoard();
 
-        assertEquals(0, board.EndState);
+        assertEquals(0, board.endState);
     }
 }

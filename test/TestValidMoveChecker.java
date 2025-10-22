@@ -8,20 +8,20 @@ public class TestValidMoveChecker {
     public void testValidMove(){
         ValidMoveChecker checker = new ValidMoveChecker();
         int[] fieldStates = {0, 1, 2, 0, 2, 1, 0, 0, 0};
-        assertTrue(checker.Check(fieldStates,1));
+        assertTrue(checker.check(fieldStates,1));
     }
 
     @Test
     public void testInvalidPosition(){
         ValidMoveChecker checker = new ValidMoveChecker();
         int[] fieldStates = {0, 0, 0, 0, 0, 0, 0, 0, 0};
-        assertFalse(checker.Check(fieldStates,10));
+        assertFalse(checker.check(fieldStates,10));
     }
 
     @Test
     public void testTakenPosition(){
         ValidMoveChecker checker = new ValidMoveChecker();
         int[] fieldStates = {1, 2, 2, 1, 2, 1, 2, 1, 1};
-        assertFalse(checker.Check(fieldStates,1));
+        assertFalse(checker.check(fieldStates,1));
     }
 }
