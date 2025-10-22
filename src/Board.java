@@ -29,7 +29,7 @@ public class Board {
      * @return gibt die Information an, welcher Spieler als Nächstes dran ist.
      */
     public boolean setFieldState(int position, int state) {
-        if (ValidMoveChecker.check(fieldStates, position)) {
+        if (ValidMoveChecker.check(fieldStates, position) && state < 3 && state > 0) {
             fieldStates[position-1] = state;
             endState = EndStateChecker.Check(fieldStates);
             if (playerTurn == 1) {

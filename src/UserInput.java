@@ -7,9 +7,7 @@ import java.util.Scanner;
  */
 
 public class UserInput {
-    /**
-     * Konstruktor: Erstellt ein neues UserInput-Objekt.
-     */
+    /** Konstruktor: Erstellt ein neues UserInput-Objekt */
     public UserInput() {
 
     }
