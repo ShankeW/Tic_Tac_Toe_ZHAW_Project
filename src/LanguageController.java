@@ -1,19 +1,16 @@
 /**
- * Diese Klasse ist zuständig für die Abspeicherung sämtliche Nachrichten,
+ * Diese Klasse ist zuständig für die Abspeicherung sämtlicher Nachrichten,
  * die je nach Spielzustand oder Benutzer Eingabe ausgegeben werden.
- * Das Datenfeld "languageSetting" nimmt Werte 1 und 2 auf wo:
- *  1 = English
+ * Das Datenfeld "languageSetting" nimmt die Werte 1 und 2 auf:
+ *  1 = English,
  *  2 = Deutsch
- * entspricht.
  */
 public class LanguageController {
     private int languageSetting = 1;
     private final String[] EnglishMessages;
     private final String[] GermanMessages;
 
-    /**
-     * Der Instanz dieser Klasse wird erzeugt.
-     */
+    /** Die Instanz dieser Klasse wird erzeugt. */
     public LanguageController() {
         this.EnglishMessages = new String[]{
                 "X's Turn",
@@ -39,9 +36,9 @@ public class LanguageController {
 
     /**
      * Die Sprache wird durch diese Methode und den Parameter gesetzt, bzw. verändert.
-     * @param languageSetting gibt an, welche Sprache languageSetting nun annehmen soll.
-     * @return gibt an, ob eine Sprache Änderung durchgeführt werden darf.
-     *  true: Veränderung erlaubt
+     * @param languageSetting gibt an, welche Sprache languageSetting annehmen soll.
+     * @return gibt an, ob eine Sprachänderung durchgeführt werden darf.
+     *  true: Veränderung erlaubt,
      *  false: Veränderung nicht erlaubt. Eingabe ungültig.
      */
     public boolean setLanguageSetting(int languageSetting) {
@@ -54,8 +51,8 @@ public class LanguageController {
     }
 
     /**
-     * Holt eine Nachricht von der per Parameter entschiedene Index.
-     * Gewählt wird entweder EnglishMessages oder DeutschMessages gemäss die aktuelle languageSetting
+     * Die Methode holt die korrekte Nachricht. Diese wird anhand eines messageIndex ausgewählt.
+     * Gewählt wird entweder EnglishMessages oder DeutschMessages gemäss des aktuellen languageSetting
      * @param messageIndex Spezifiziert die gewünschte Nachricht
      * @return Gibt die Nachricht zurück
      */
