@@ -31,28 +31,7 @@ public class TicTacToe {
 
         boolean currentTurnFinished = false;
 
-            while(!currentTurnFinished){
-                Board.renderBoard();
-                if (currentPlayerTurn == 1) { // X Turn
-                    sendMessage(LanguageController.getMessage(0)); //X's Turn
-                } else if (currentPlayerTurn == 2) {
-                    sendMessage(LanguageController.getMessage(1)); //O's Turn
-                }
-                int movePosition = UserInput.checkInput(UserInput.getInput());
-                if (movePosition < 0) {
-                    sendMessage(LanguageController.getMessage(7)); //Invalid Input
-                    continue;
-                }
-                if (movePosition > 9 || movePosition < 1){
-                    sendMessage(LanguageController.getMessage(5)); //Invalid Position
-                    continue;
-                }
-                if (!Board.setFieldState(movePosition, currentPlayerTurn)) {
-                    sendMessage(LanguageController.getMessage(6)); //Taken Position
-                } else {
-                    currentTurnFinished = true;
-                }
-            }
+            processPosition(currentTurnFinished, currentPlayerTurn);
             Board.renderBoard();
         }
 
@@ -67,7 +46,32 @@ public class TicTacToe {
                 sendMessage(LanguageController.getMessage(4)); //Tie
                 break;
         }
-        
+
+    }
+
+    private void processPosition(boolean currentTurnFinished, int currentPlayerTurn) {
+        while(!currentTurnFinished){
+            Board.renderBoard();
+            if (currentPlayerTurn == 1) { // X Turn
+                sendMessage(LanguageController.getMessage(0)); //X's Turn
+            } else if (currentPlayerTurn == 2) {
+                sendMessage(LanguageController.getMessage(1)); //O's Turn
+            }
+            int movePosition = UserInput.checkInput(UserInput.getInput());
+            if (movePosition < 0) {
+                sendMessage(LanguageController.getMessage(7)); //Invalid Input
+                continue;
+            }
+            if (movePosition > 9 || movePosition < 1){
+                sendMessage(LanguageController.getMessage(5)); //Invalid Position
+                continue;
+            }
+            if (!Board.setFieldState(movePosition, currentPlayerTurn)) {
+                sendMessage(LanguageController.getMessage(6)); //Taken Position
+            } else {
+                currentTurnFinished = true;
+            }
+        }
     }
 
     private void sendMessage(String message){
