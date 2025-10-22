@@ -1,12 +1,11 @@
 TL:DR wie unser TicTacToe und seine Klassen funktionieren:
 
-1. **Main** startet alles
-2. **TicTacToe** steuert alles
-3. Spielzustand im **Board**
-4. Eingaben über **UserInput**
-5. Überprüfung mit **ValidMoveChecker**
-6. & **EndstateChecker**
-7. Nachrichten an die Spieler mit **LanguageController**
+1. **TicTacToe** startet und steuert alles
+2. Spielzustand im **Board**
+3. Eingaben über **UserInput**
+4. Überprüfung mit **ValidMoveChecker**
+5. & **EndstateChecker**
+6. Nachrichten an die Spieler mit **LanguageController**
 
 👉 Hier die detaillierte Version: [Klassenbeschreibung](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/Team1_Alphas_Klassenbeschreibung_TicTacToe_V1.pdf)
 
@@ -25,6 +24,8 @@ Klassenverantwortung
 
 
 Klassendiagramm Veränderungen:
+
+Main Klasse wird gelöscht, und die Main Methode wird im TicTacToe Klasse verschiebt.
 
 Namenänderung:
 Um Verwirrungen zu vermeiden und mehr spezifisch zu sein, werden Namen für folgende Klassen und Methoden geändert:
