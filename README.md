@@ -46,3 +46,8 @@ GetMessage() braucht keine int Language Parameter, da es schon in der Klasse ges
 GetMessage() gibt eine String zurück, im Klassendiagramm war das nicht richtig beschrieben.
 - UserInput:
 CheckInput ist auf public geändert.
+- Neue Methode processPosition():
+Eine neue Methode "processPosition" wird erstellt. Diese soll den Codeblock der Methode "playTurn" verringern, so dass die Vorschrift "Clean Code" eingehaltet werden kann. 
+
+Klassenänderung:
+-  Die Klasse "Main" wird gelöscht und existiert nun als eine Methode in "TicTacToe".
