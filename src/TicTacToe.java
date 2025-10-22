@@ -78,4 +78,9 @@ public class TicTacToe {
         this.board.resetBoard();
         playTurn();
     }
+
+    public static void main(String[] args) {
+        TicTacToe ticTacToe = new TicTacToe();
+        ticTacToe.restartGame();
+    }
 }
