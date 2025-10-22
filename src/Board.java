@@ -8,7 +8,18 @@ public class Board {
     private ValidMoveChecker ValidMoveChecker;
     private EndStateChecker EndStateChecker;
     private int[] fieldStates;
+    /**
+     * Speichert die Aktuelle Spieler Zug
+     * Entweder Spieler 1 (X) oder 2 (O)
+     */
     public int playerTurn; // 1 = Player X, 2 = Player O
+    /**
+     * Speichert, ob das Spiel eine Endstate erreicht hat.
+     * 0 = Das Spiel geht weiter
+     * 1 = Spieler X hat gewonnen
+     * 2 = Spieler 0 hat gewonnen
+     * 3 = Es hat ein Unentschieden
+     */
     public int endState; // 0 = Continue, 1 = Player X Win, 2 = Player O Win, 3 = Unentschieden
 
     /**
