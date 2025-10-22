@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>11</zoom_level>
+  <zoom_level>9</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>495</x>
-      <y>77</y>
-      <w>352</w>
-      <h>242</h>
+      <x>360</x>
+      <y>63</y>
+      <w>288</w>
+      <h>198</h>
     </coordinates>
     <panel_attributes>Board
 --
 - ValidMoveChecker: ValidMoveChecker
 - EndStateChecker: EndStateChecker
-- FieldStates: int[9]
-+ PlayerTurn: Int
-+ BoardState: Int
+- fieldStates: int[9]
++ playerTurn: int
++ endState: int
 --
 + Board()
-+ SetFieldState(int position, int State): boolean
-+ RenderBoard(): void
-+ ResetBoard(): void
++ setFieldState(position: int, state: int): boolean
++ renderBoard(): void
++ resetBoard(): void
 --
 Responsibilities
 Stores Boardstate
@@ -30,17 +30,17 @@ Stores Boardstate
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>891</x>
-      <y>341</y>
-      <w>341</w>
-      <h>143</h>
+      <x>684</x>
+      <y>279</y>
+      <w>279</w>
+      <h>117</h>
     </coordinates>
     <panel_attributes>UserInput
 --
 --
 + UserInput()
-+ GetInput(): String
-- CheckInput(String Input): int
++ getInput(): String
+- checkInput(Input: String): int
 --
 Responsibilities
 Responsible for getting and parsing Input.</panel_attributes>
@@ -49,16 +49,16 @@ Responsible for getting and parsing Input.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>891</x>
-      <y>132</y>
-      <w>297</w>
-      <h>187</h>
+      <x>684</x>
+      <y>108</y>
+      <w>243</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>EndStateChecker
 --
 --
 + EndStateChecker()
-+ CheckForEndState(int[9] FieldState): int
++ check(fieldState: int[9]): int
 --
 Responsibilities
 Checks for Endstate:
@@ -71,16 +71,16 @@ Checks for Endstate:
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>55</x>
-      <y>187</y>
-      <w>396</w>
-      <h>121</h>
+      <x>0</x>
+      <y>153</y>
+      <w>324</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>ValidMoveChecker
 --
 --
 + ValidMoveChecker()
-+ CheckValidMove(int[9] FieldStates, int Field): boolean
++ check(fieldStates: int[9], field: int): boolean
 --
 Responsibilities
 Responsible for keeping moves valid</panel_attributes>
@@ -89,10 +89,10 @@ Responsible for keeping moves valid</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>836</x>
-      <y>418</y>
-      <w>77</w>
-      <h>33</h>
+      <x>639</x>
+      <y>342</y>
+      <w>63</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
@@ -100,10 +100,10 @@ Responsible for keeping moves valid</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>440</x>
-      <y>253</y>
-      <w>77</w>
-      <h>33</h>
+      <x>315</x>
+      <y>207</y>
+      <w>63</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
@@ -111,10 +111,10 @@ Responsible for keeping moves valid</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>836</x>
-      <y>220</y>
-      <w>77</w>
-      <h>33</h>
+      <x>639</x>
+      <y>180</y>
+      <w>63</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
@@ -122,39 +122,23 @@ Responsible for keeping moves valid</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>506</x>
-      <y>583</y>
-      <w>308</w>
-      <h>121</h>
-    </coordinates>
-    <panel_attributes>Main
---
-- TicTacToe: TicTacToe
---
-+ main(String[] args)
---
-Responsibilities
-Responsible for Starting the Game</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>495</x>
-      <y>341</y>
-      <w>352</w>
-      <h>209</h>
+      <x>360</x>
+      <y>279</y>
+      <w>288</w>
+      <h>207</h>
     </coordinates>
     <panel_attributes>TicTacToe
 --
-- Board: Board
-- UserInput: UserInput
-- LanguageController: LanguageController
+- Board: Board {final}
+- UserInput: UserInput {final}
+- LanguageController: LanguageController {final}
 --
 + TicTacToe()
-- PlayTurn(): void
-- SendMessage(int MessageIndex): void
-+ RestartGame(): void
+- playTurn(): void
+- processPosition(currentPlayerTurn: int): void
+- sendMessage(messageIndex: int): void
++ restartGame(): void
+_+ main(args: String[]: void_
 --
 Responsibilities
 Controls All Game Features
@@ -164,42 +148,31 @@ Controls All Game Features
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>660</x>
-      <y>308</y>
-      <w>33</w>
-      <h>55</h>
+      <x>495</x>
+      <y>252</y>
+      <w>27</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;30.0</additional_attributes>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>649</x>
-      <y>539</y>
-      <w>33</w>
-      <h>66</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>110</x>
-      <y>341</y>
-      <w>341</w>
-      <h>209</h>
+      <x>45</x>
+      <y>279</y>
+      <w>279</w>
+      <h>171</h>
     </coordinates>
     <panel_attributes>LanguageController
 --
-- Language Setting
-- EnglishMessages: String[]
-- GermanMessages: String[]
+- languageSetting: int
+- EnglishMessages: String[] {final}
+- GermanMessages: String[] {final}
 -
 + LanguageController()
-+ SetLanguageSetting(int Language)
-+ GetMessage(int Language, int MessageIndex)
++ setLanguageSetting(languageSetting: int)
++ getMessage(messageIndex: int)
 --
 Responsibilities
 Responsible For Storing Language Setting
@@ -209,10 +182,10 @@ And Messages</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>440</x>
-      <y>429</y>
-      <w>77</w>
-      <h>33</h>
+      <x>315</x>
+      <y>351</y>
+      <w>63</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>

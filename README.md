@@ -12,7 +12,7 @@ TL:DR wie unser TicTacToe und seine Klassen funktionieren:
 - [Ablaufdiagramm (PDF)](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/TicTacToe%20UML/AblaufDragramm%20TicTacToe.png)
 - [Testkonzept (PDF)](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/Team1_Alphas_Testkonzept.pdf)
 - [TicTacToe UML (UXF)](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/TicTacToe%20UML/TicTacToe%20UML.uxf)
-- [TicTacToe UML V8 (PDF)](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/TicTacToe%20UML/TicTacToe%20UMLV8.pdf)
+- [TicTacToe UML (PDF)](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/TicTacToe%20UML/TicTacToe%20UML.pdf)
 - [Prosa TicTacToe (PDF)](https://github.zhaw.ch/PM1-IT25aZH-dint-fame-dihl/team01-alphas-projekt1-tic-tac-toe/blob/main/Prosa_TicTacToe.pdf) 
 
 Klassenverantwortung
@@ -46,3 +46,8 @@ GetMessage() braucht keine int Language Parameter, da es schon in der Klasse ges
 GetMessage() gibt eine String zurück, im Klassendiagramm war das nicht richtig beschrieben.
 - UserInput:
 CheckInput ist auf public geändert.
+- Neue Methode processPosition():
+Eine neue Methode "processPosition" wird erstellt. Diese soll den Codeblock der Methode "playTurn" verringern, so dass die Vorschrift "Clean Code" eingehaltet werden kann. 
+
+Klassenänderung:
+-  Die Klasse "Main" wird gelöscht und existiert nun als eine Methode in "TicTacToe".
