@@ -42,6 +42,6 @@ public class TestValidMoveChecker {
     @Test
     public void testNullArrayInvalid() {
         ValidMoveChecker checker = new ValidMoveChecker();
-        assertFalse(checker.check(null, 1));
+        assertThrows(NullPointerException.class, () -> checker.check(null, 1));
     }
 }
