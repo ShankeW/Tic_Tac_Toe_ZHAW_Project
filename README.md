@@ -1,3 +1,11 @@
+# Team & Contributions
+This was a team project developed for the [Name des Moduls]-course at ZHAW. 
+### **My primary contributions:**
+  - Implemented the class `EndStateChecker` (Checks if the game has reached an end state).
+  - Creating unit and integration tests for `EndStateChecker`.
+  - Reviewing existing code and adding missing Javadocs across the project.
+---
+
 TL:DR wie unser TicTacToe und seine Klassen funktionieren:
 
 1. **TicTacToe** startet und steuert alles
