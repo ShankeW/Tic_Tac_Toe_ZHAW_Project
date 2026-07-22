@@ -1,5 +1,5 @@
 # Team & Contributions
-This was a team project developed for the [Name des Moduls]-course at ZHAW. 
+This was a team project developed for the Software-Project Module at **ZHAW (Zurich University of Applied Sciences)**.
 ### **My primary contributions:**
   - Implemented the class `EndStateChecker` (Checks if the game has reached an end state).
   - Creating unit and integration tests for `EndStateChecker`.
